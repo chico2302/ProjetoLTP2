@@ -2,7 +2,7 @@ package classes;
 
 import java.util.ArrayList;
 
-public class pacoteViagem {
+public abstract class PacoteViagem {
 	//variaveis 
 	String nome;
 	String destino;
@@ -10,10 +10,10 @@ public class pacoteViagem {
 	double preco;
 	String tipo;
 	ArrayList<String> servicos = new ArrayList<String>();
-	static 	ArrayList<pacoteViagem> pacotes = new ArrayList<pacoteViagem>();
+	static 	ArrayList<PacoteViagem> pacotes = new ArrayList<PacoteViagem>();
 	
 	// construtor
-	public pacoteViagem(String nome, String destino, int duracao, double preco, String tipo) {
+	public PacoteViagem(String nome, String destino, int duracao, double preco, String tipo) {
 		this.nome = nome;
 		this.destino = destino;
 		this.duracao = duracao;
