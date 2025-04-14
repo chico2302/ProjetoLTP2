@@ -3,13 +3,13 @@ package classes;
 import java.util.List;
 import java.util.ArrayList;
 
-public abstract class cliente {
+public abstract class Cliente {
 	String nome;
 	int telefone;
 	String email;
-	static ArrayList<cliente> clientes = new ArrayList<cliente>();
+	static ArrayList<Cliente> clientes = new ArrayList<Cliente>();
 	
-	public cliente(String nome, int telefone, String email) {
+	public Cliente(String nome, int telefone, String email) {
 		this.nome = nome;
 		this.telefone = telefone;
 		this.email = email;
@@ -40,19 +40,19 @@ public abstract class cliente {
 	}
 }
 
-class clienteNacional extends cliente {
+class ClienteNacional extends Cliente {
 	int cpf;
 	
-	public clienteNacional(String nome,int telefone, String email, int cpf) {
+	public ClienteNacional(String nome,int telefone, String email, int cpf) {
 	super(nome,telefone,email);
 	this.cpf = cpf;
 	}
 }
 
-class clienteInternacional extends cliente {
+class ClienteInternacional extends Cliente {
 	int passaporte;
 	
-	public clienteInternacional(String nome,int telefone, String email, int passaporte) {
+	public ClienteInternacional(String nome,int telefone, String email, int passaporte) {
 	super(nome,telefone,email);
 	this.passaporte = passaporte;
 	}
