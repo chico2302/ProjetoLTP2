@@ -15,6 +15,12 @@ public abstract class cliente {
 		this.email = email;
 	}
 	
+	public void Listar() {
+		for (int i = 0; i < clientes.size(); i++) {
+			System.out.println(clientes.get(i).nome);
+		}
+	}
+	
 	public void Procurar(String nome){
 		for (int i = 0; i < clientes.size(); i++) {
 			if (clientes.get(i).nome.equals(nome)) {
@@ -22,9 +28,17 @@ public abstract class cliente {
 			}
 			}
 		}
-	}
 	
 
+	public void Eliminar(String nomeRemove) {
+		for (int i = 0; i < clientes.size(); i++) {
+			if (clientes.get(i).nome.equals(nomeRemove)) {
+				clientes.remove(i);
+				System.out.println("Nome " + nomeRemove + " removido!");
+			}
+		}
+	}
+}
 
 class clienteNacional extends cliente {
 	int cpf;
