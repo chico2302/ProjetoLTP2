@@ -13,6 +13,7 @@ public abstract class Cliente {
 		this.nome = nome;
 		this.telefone = telefone;
 		this.email = email;
+		add.this(clientes);
 	}
 	
 	public void Listar() {
