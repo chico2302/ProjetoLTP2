@@ -16,7 +16,7 @@ CREATE TABLE pacotes (
     destino VARCHAR(255) NOT NULL,
     duracao_dias INT NOT NULL,
     preco DECIMAL(10, 2) NOT NULL,
-    tipo_pacote ENUM('aventura', 'luxo', 'cultural', 'outros') NOT NULL
+    tipo_pacote ENUM('aventura', 'luxo', 'cultural') NOT NULL
 );
 CREATE TABLE servicos (
     servico_id INT PRIMARY KEY AUTO_INCREMENT,
