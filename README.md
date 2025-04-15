@@ -33,4 +33,38 @@ Após o cadastro, o cliente pode escolher entre diversos **pacotes de viagens**,
   - 🏕️ **Aventura**: inclui trilhas e passeios de jipe (**+35%**)  
   - 🏛️ **Cultural**: visitas a museus, centros históricos e experiências gastronômicas (**+28%**)
 
-O cliente pode escolher **mais de um pacote**, e também optar por **serviços adicionais** (
+O cliente pode escolher **mais de um pacote**, e também optar por **serviços adicionais** (não obrigatórios), como:
+
+- 🚐 Traslado  
+- 🗺️ Passeios  
+- 🚘 Motorista particular  
+- 🚗 Aluguel de carro  
+
+> 💡 *Os valores dos serviços adicionais variam conforme a escolha do usuário.*
+
+---
+
+#### 🛠️ Gerência
+
+A área administrativa do sistema oferece funcionalidades para a **gestão de dados**, como:
+
+- **Listar, buscar e excluir** clientes e pacotes  
+  - ❗ Pacotes **só podem ser excluídos** se **não houver clientes associados**
+  - ✅ Para listar pacotes, é necessário que o cadastro contenha **preço** e **destino**
+
+- **Análise de dados**:
+  - 🔍 Buscar clientes específicos e visualizar seus dados e pacotes adquiridos  
+  - 📦 Ver todos os clientes cadastrados em determinado pacote  
+
+> 📋 *Todos os dados são organizados em listas e arranjos, facilitando a busca e a análise de informações.*
+
+---
+
+### ⚙️ Requisitos do Sistema
+
+- 🖥️ **Linguagem**: Java 11 (Programação Orientada a Objetos)  
+- 💾 **Banco de Dados**: MySQL  
+- 🖼️ **Interface Gráfica (GUI)**: Utiliza os pacotes `javax.swing` e `java.awt`
+
+---
+
