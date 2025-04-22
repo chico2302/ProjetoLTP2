@@ -5,8 +5,8 @@ CREATE TABLE clientes (
     cliente_id INT PRIMARY KEY AUTO_INCREMENT,
     nome VARCHAR(255) NOT NULL,
     tipo_cliente ENUM('nacional', 'estrangeiro') NOT NULL,
-    cpf VARCHAR(14), -- para clientes nacionais
-    passaporte VARCHAR(20), -- para clientes estrangeiros
+    cpf VARCHAR(14) UNIQUE, -- para clientes nacionais
+    passaporte VARCHAR(20) UNIQUE, -- para clientes estrangeiros
     telefone VARCHAR(15),
     email VARCHAR(255)
 );
