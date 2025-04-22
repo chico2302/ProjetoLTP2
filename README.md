@@ -65,6 +65,7 @@ A área administrativa do sistema oferece funcionalidades para a **gestão de da
 - 🖥️ **Linguagem**: Java 11 (Programação Orientada a Objetos)  
 - 💾 **Banco de Dados**: MySQL  
 - 🖼️ **Interface Gráfica (GUI)**: Utiliza os pacotes `javax.swing` e `java.awt`
+- 📚 **Bibliotecas Importadas**: `mysql-connector` e `protobuf-java`
 
 ---
 
