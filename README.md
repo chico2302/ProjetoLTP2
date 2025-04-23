@@ -29,9 +29,9 @@ Após o cadastro, o cliente pode escolher entre diversos **pacotes de viagens**,
 - Duração  
 - Preço  
 - Tipo do pacote:  
-  - 🏨 **Luxuoso**: mais comodidade, viagem de primeira classe e motoristas inclusos (**+40%**)  
-  - 🏕️ **Aventura**: inclui trilhas e passeios de jipe (**+35%**)  
-  - 🏛️ **Cultural**: visitas a museus, centros históricos e experiências gastronômicas (**+28%**)
+  - 🏨 **Luxuoso**: mais comodidade, viagem de primeira classe e motoristas inclusos
+  - 🏕️ **Aventura**: inclui trilhas e passeios de jipe 
+  - 🏛️ **Cultural**: visitas a museus, centros históricos e experiências gastronômicas
 
 O cliente pode escolher **mais de um pacote**, e também optar por **serviços adicionais** (não obrigatórios), como:
 
