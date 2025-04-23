@@ -1,6 +1,9 @@
 package classes;
 
 import java.util.ArrayList;
+
+import javax.swing.JOptionPane;
+
 import classes.Cliente;
 import classes.CadastroPacote;
 
@@ -81,16 +84,36 @@ public abstract class PacoteViagem {
 		}
 	}
 	
-	public void adicionarServico(ServicoAdicional s) {
-        servicosAdicionais.add(s);
-    }
+	// funcoes relacionadas aos servicos
 	
+	 public void adicionarServico(ServicoAdicional servico) {
+	        servicosAdicionais.add(servico);
+	    }
+	public void listarServicos() {
+        if (servicosAdicionais.isEmpty()) {
+            JOptionPane.showMessageDialog(null,
+                "Nenhum serviço adicional para o pacote " + nome);
+            return;
+        }
+
+        StringBuilder mensagem = new StringBuilder("Serviços adicionais para " + nome + ":\n");
+        for (ServicoAdicional s : servicosAdicionais) {
+            mensagem.append(" - ")
+                    .append(s.getNome())
+                    .append(" (R$").append(s.getPreco()).append(")\n");
+        }
+        JOptionPane.showMessageDialog(null, mensagem.toString());
+    }
 }
+	
+	
+
 
 // classes herdeiras
 class PacoteAventura extends PacoteViagem {
 	public PacoteAventura(String nome, String destino, int duracao, double preco, String tipo, Cliente cliente) {
 		super(nome, destino, duracao, preco, tipo, cliente);
+		@SuppressWarnings("unused")
 		String detalhes = "Inclui trilhas e passeios de jipe";
 		pacotes.add(this);
 	}
