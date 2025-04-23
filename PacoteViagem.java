@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
 import classes.Cliente;
+import conexao_db.ClienteDAO;
 import classes.CadastroPacote;
 
 public abstract class PacoteViagem {
@@ -17,20 +18,20 @@ public abstract class PacoteViagem {
 	String destino;
 	int duracao;
 	double preco;
-	String tipo;
 	
 	Cliente cliente;
 	
 	// construtor
-	public PacoteViagem(String nome, String destino, int duracao, double preco, String tipo, Cliente cliente) {
+	public PacoteViagem(String nome, String destino, int duracao, double preco, Cliente cliente) {
 		this.nome = nome;
 		this.destino = destino;
 		this.duracao = duracao;
 		this.preco = preco;
-		this.tipo = tipo;
 		this.cliente = cliente;
 		cliente.adicionarPacote(this);
 		pacotes.add(this);
+		ClienteDAO conectivo = new ClienteDAO();
+		conectivo.inserirPacote(this);
 	}
 	
 	// getters
@@ -45,9 +46,6 @@ public abstract class PacoteViagem {
 	}
 	public double getPreco() {
 		return preco;
-	}
-	public String getTipo() {
-		return tipo;
 	}
 	public String getCliente() {
 		return cliente.nome;
@@ -104,31 +102,4 @@ public abstract class PacoteViagem {
         }
         JOptionPane.showMessageDialog(null, mensagem.toString());
     }
-}
-	
-	
-
-
-// classes herdeiras
-class PacoteAventura extends PacoteViagem {
-	public PacoteAventura(String nome, String destino, int duracao, double preco, String tipo, Cliente cliente) {
-		super(nome, destino, duracao, preco, tipo, cliente);
-		@SuppressWarnings("unused")
-		String detalhes = "Inclui trilhas e passeios de jipe";
-		pacotes.add(this);
-	}
-}
-class PacoteLuxuoso extends PacoteViagem {
-	public PacoteLuxuoso(String nome, String destino, int duracao, double preco, String tipo, Cliente cliente) {
-		super(nome, destino, duracao, preco, tipo, cliente);
-		String detalhes = "Mais comodidade, viagem de primeira classe e motoristas inclusos";
-		pacotes.add(this);
-	}
-}
-class PacoteCultural extends PacoteViagem {
-	public PacoteCultural(String nome, String destino, int duracao, double preco, String tipo, Cliente cliente) {
-		super(nome, destino, duracao, preco, tipo, cliente);
-		String detalhes = "Inclui visitas a museus, centros históricos e experiências gastronômicas";
-		pacotes.add(this);
-	}
 }
