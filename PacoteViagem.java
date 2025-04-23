@@ -18,7 +18,7 @@ public abstract class PacoteViagem {
 	String destino;
 	int duracao;
 	double preco;
-	
+	String tipo = null;
 	Cliente cliente;
 	
 	// construtor
@@ -47,7 +47,10 @@ public abstract class PacoteViagem {
 	public double getPreco() {
 		return preco;
 	}
-	public String getCliente() {
+	public String getTipo() {
+		return tipo;
+	}
+ 	public String getCliente() {
 		return cliente.nome;
 	}
 	
