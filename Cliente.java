@@ -55,5 +55,8 @@ class ClienteInternacional extends Cliente {
 		super(nome,telefone,email);
 		this.passaporte = passaporte;
 	}
+	public int getPassaporte(){
+		return passaporte;
+	}
 	
 }
