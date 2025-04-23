@@ -1,36 +1,63 @@
 package classes;
 
 import java.util.ArrayList;
+import classes.Cliente;
+import classes.CadastroPacote;
 
 public abstract class PacoteViagem {
-	//variaveis 
+	
+	private ArrayList<ServicoAdicional> servicosAdicionais = new ArrayList<>();
+	static 	ArrayList<PacoteViagem> pacotes = new ArrayList<PacoteViagem>();
+	
+	//variaveis
 	String nome;
 	String destino;
 	int duracao;
 	double preco;
 	String tipo;
-	ArrayList<ServicoAdicional> servicos = new ArrayList<ServicoAdicional>();
-	static 	ArrayList<PacoteViagem> pacotes = new ArrayList<PacoteViagem>();
+	
+	Cliente cliente;
 	
 	// construtor
-	public PacoteViagem(String nome, String destino, int duracao, double preco, String tipo) {
+	public PacoteViagem(String nome, String destino, int duracao, double preco, String tipo, Cliente cliente) {
 		this.nome = nome;
 		this.destino = destino;
 		this.duracao = duracao;
 		this.preco = preco;
 		this.tipo = tipo;
+		this.cliente = cliente;
+		cliente.adicionarPacote(this);
 		pacotes.add(this);
-
+	}
+	
+	// getters
+	public String getNome() {
+		return nome;
+	}
+	public String getDestino() {
+		return destino;
+	}
+	public int getDuracao() {
+		return duracao;
+	}
+	public double getPreco() {
+		return preco;
+	}
+	public String getTipo() {
+		return tipo;
+	}
+	public String getCliente() {
+		return cliente.nome;
 	}
 	
 	// funcoes relacionadas aos pacotes
 	public void listarPacotes() {
 		for (PacoteViagem p : pacotes) {
-		    System.out.println("Nome: " + p.nome + 
-		                       " | Destino: " + p.destino + 
-		                       " | Duração: " + p.duracao + 
-		                       " | Preço: " + p.preco + 
-		                       " | Tipo: " + p.tipo +
+		    System.out.println("Nome: " + p.getNome() +
+		                       " | Destino: " + p.getDestino() +
+		                       " | Duração: " + p.getDuracao() +
+		                       " | Preço: " + p.getPreco() +
+		                       " | Tipo: " + p.getTipo() +
 		                       "----------------------------");
 		}
 		
@@ -53,26 +80,31 @@ public abstract class PacoteViagem {
 	        }
 		}
 	}
+	
+	public void adicionarServico(ServicoAdicional s) {
+        servicosAdicionais.add(s);
+    }
+	
 }
+
+// classes herdeiras
 class PacoteAventura extends PacoteViagem {
-	public PacoteAventura(String nome, String destino, int duracao, double preco, String tipo) {
-		super(nome, destino, duracao, preco, tipo);
+	public PacoteAventura(String nome, String destino, int duracao, double preco, String tipo, Cliente cliente) {
+		super(nome, destino, duracao, preco, tipo, cliente);
 		String detalhes = "Inclui trilhas e passeios de jipe";
 		pacotes.add(this);
 	}
 }
-
 class PacoteLuxuoso extends PacoteViagem {
-	public PacoteLuxuoso(String nome, String destino, int duracao, double preco, String tipo) {
-		super(nome, destino, duracao, preco, tipo);
+	public PacoteLuxuoso(String nome, String destino, int duracao, double preco, String tipo, Cliente cliente) {
+		super(nome, destino, duracao, preco, tipo, cliente);
 		String detalhes = "Mais comodidade, viagem de primeira classe e motoristas inclusos";
 		pacotes.add(this);
 	}
 }
-
 class PacoteCultural extends PacoteViagem {
-	public PacoteCultural(String nome, String destino, int duracao, double preco, String tipo) {
-		super(nome, destino, duracao, preco, tipo);
+	public PacoteCultural(String nome, String destino, int duracao, double preco, String tipo, Cliente cliente) {
+		super(nome, destino, duracao, preco, tipo, cliente);
 		String detalhes = "Inclui visitas a museus, centros históricos e experiências gastronômicas";
 		pacotes.add(this);
 	}
