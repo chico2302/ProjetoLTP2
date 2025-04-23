@@ -103,18 +103,22 @@ public class CadastroPacote {
 	               case 0:
 	            	   pacoteEncontrado.adicionarServico(Translado);
 	            	   JOptionPane.showMessageDialog(null, "Translado incluso no pacote!");
+	            	   pacoteEncontrado.listarServicos();
 	                   break;
 	               case 1:
 	            	   pacoteEncontrado.adicionarServico(Passeios);
 	            	   JOptionPane.showMessageDialog(null, "Passeios adicionais inclusos no pacote!");
+	            	   pacoteEncontrado.listarServicos();
 	                   break;
 	               case 2:
 	            	   pacoteEncontrado.adicionarServico(MotoristaParticular);
 	            	   JOptionPane.showMessageDialog(null, "Motorista particular incluso no pacote!");
+	            	   pacoteEncontrado.listarServicos();
 	            	   break;
 	               case 3:
 	            	   pacoteEncontrado.adicionarServico(AluguelCarro);
 	            	   JOptionPane.showMessageDialog(null, "Aluguel de carro incluso no pacote!");
+	            	   pacoteEncontrado.listarServicos();
 	                   break;
 	               case 4:
 	            	   JOptionPane.showMessageDialog(null, "Saindo...");
@@ -125,6 +129,7 @@ public class CadastroPacote {
 	       } while (opcao != 4);
 	}
 	
+
 	public static void adicionarCliente(Cliente cliente) {
 		clientes.add(cliente);
 	}
