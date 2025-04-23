@@ -44,6 +44,9 @@ class ClienteNacional extends Cliente {
 		super(nome,telefone,email);
 		this.cpf = cpf;
 	}
+	public int getCpf(){
+		return cpf;
+	}
 }
 class ClienteInternacional extends Cliente {
 	protected int passaporte;
