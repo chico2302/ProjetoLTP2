@@ -1,3 +1,4 @@
+
 package classes;
 
 import java.util.ArrayList;
@@ -16,6 +17,11 @@ public abstract class ServicoAdicional {
 	}
 	
 	//funcoes
+	
+	 public void adicionarServico(ServicoAdicional servico) {
+	        servicos.add(servico);
+	    }
+	
 	public void listarServicos() {
 		for (ServicoAdicional s : servicos) {
 			System.out.println(" Nome: " + s.nome +
@@ -40,5 +46,34 @@ public abstract class ServicoAdicional {
 				return;
 			}
 		}
+	}
+}
+
+// Servicos adicionais
+class Translado extends ServicoAdicional{
+	public Translado(String nome, double preco) {
+		super(nome,preco);
+		servicos.add(this);
+	}
+}
+
+class Passeios extends ServicoAdicional{
+	public Passeios(String nome, double preco) {
+		super(nome,preco);
+		servicos.add(this);
+	}
+}
+
+class MotoristaParticular extends ServicoAdicional{
+	public MotoristaParticular(String nome, double preco) {
+		super(nome,preco);
+		servicos.add(this);
+	}
+}
+
+class AluguelCarro extends ServicoAdicional{
+	public AluguelCarro(String nome, double preco) {
+		super(nome,preco);
+		servicos.add(this);
 	}
 }
