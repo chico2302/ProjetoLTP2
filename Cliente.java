@@ -23,7 +23,8 @@ public abstract class Cliente {
 	public void adicionarPacote(PacoteViagem pacote) {
 		pacoteRelacionado.add(pacote);
 	}
-
+	
+	// Getters
 	public String getNome() {
 		return nome;
 	}
