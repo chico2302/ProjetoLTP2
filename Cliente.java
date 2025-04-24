@@ -18,10 +18,7 @@ public abstract class Cliente {
 		this.nome = nome;
 		this.telefone = telefone;
 		this.email = email;
-		CadastroPacote.adicionarCliente(this);
-		ClienteDAO conectivo = new ClienteDAO();
-		conectivo.inserirCliente(this);
-	}
+		}
 	
 	public void adicionarPacote(PacoteViagem pacote) {
 		pacoteRelacionado.add(pacote);
