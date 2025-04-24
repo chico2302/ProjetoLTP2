@@ -45,6 +45,12 @@ public class CadastroCliente {
 			JOptionPane.showMessageDialog(null, "Cliente não encontrado ou já removido!");
 		}
 	}
+	public void InserirDAO(Cliente cliente) {
+		CadastroPacote.adicionarCliente(cliente);
+		ClienteDAO conectivo = new ClienteDAO();
+		conectivo.inserirCliente(cliente);
+		}
+	
 	public void clientePacote() {
 		String nome = JOptionPane.showInputDialog("Nome do cliente:");
 		boolean clienteEncontrado = false;
